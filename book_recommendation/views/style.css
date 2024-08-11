@@ -1,0 +1,750 @@
+:root {
+    --img1: url("https://books.google.co.in/books/publisher/content?id=rrscEAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U3G1oGgKL1yYIQ5mAlXx-TTpJKyAQ&w=1280");
+    --img2: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoVZjuQb_3ShWVh8Y_Gdqxu6anrLY6LFvKSQ&usqp=CAU");
+    --img3: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkXNppkhMzj8WmsUpbuXoju8D3VeP95na_eg&usqp=CAU");
+    --img4: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd8NTy0H5R1D1QnOI_-Y5YkgWP9TNPyuc96g&usqp=CAU");
+    --img5: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDOGFVOkqKEuKzSBqpxyJElPV82PxjuVaAQ&usqp=CAU");
+    --img6: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2hNdGKQmkJ5wtwpTDo1FM-kEt_7pTSPT3jlNHJ8HujuwECNDHYTPChSgWDLmBKYQ3NK4&usqp=CAU");
+    --img7: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdymt8ec_bDWvmKFYmrF0oVKNIpqhMrEWVPQ&usqp=CAU");
+    --img8: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdKqBJvKcmGoIfmbQniYcgB9H_8bma7pJgjA&usqp=CAU");
+  }
+  
+  @property --carousel-rotate {
+    syntax: "<rotateY>";
+    inherits: false;
+    initial-value: -45deg;
+  }
+  
+  @keyframes rotateNextEnd {
+    0% {
+      transform: rotateY(-360deg);
+      transition: transform 0.2s ease;
+    }
+    99.99% {
+      transform: rotateY(-405deg);
+      transition: transform 0.2s ease;
+    }
+    100% {
+      transform: rotateY(-45deg);
+      transition: none;
+    }
+  }
+  @keyframes rotateNextEnd {
+    0% {
+      transform: rotateY(-405deg);
+    }
+    99% {
+      transform: rotateY(-45deg);
+    }
+  }
+  
+ 
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #302b63;
+}
+
+.navbar {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    background-color: #302b63;
+    padding: 10px 20px;
+    position: relative; /* To position the icon absolutely */
+}
+
+.nav-icon {
+    font-size: 24px; /* Size of the icon */
+    color: white;
+    position: absolute;
+    left: 20px; /* Position the icon at the left corner */
+}
+
+.nav-links {
+    display: flex;
+    margin-left: auto; /* Push the nav items to the right */
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item a:hover {
+    background-color: #575757;
+}
+
+.about-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+ul {
+  /* ... other styles ... */
+  transition: transform 0.5s ease-in-out; /* Smooth transition for rotation */
+}
+
+/* Adjust the margin-top or other properties if needed to fit your layout */
+
+  .intro {
+    margin: 0px;
+    position: relative;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 120vh;
+    
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+  }
+
+  
+  .scroll{
+    margin-top: 40px;
+    opacity: 0;
+  }
+  
+  
+  
+  section {
+    display: block;
+    width: 200px;
+    height: 260px;
+    position: relative;
+    perspective:2000px;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateX(5deg);
+    h1,
+    h2 {
+      text-align: center;
+      color: #fff;
+      margin: 0px;
+        font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    }
+    h2 {
+      font-size: 150%;
+      &:after {
+        color: #ccc;
+        content: "x";
+      }
+    }
+    h1 {
+      text-align: center;
+      color: #fff;
+      margin: 0px;
+      margin-top: -30px;
+      display: block;
+      width: 200%;
+      left: -50%;
+      position: relative;
+      &:after {
+     
+        font-size: 150%;
+        font-weight: 300;
+        letter-spacing:.1em;
+        text-shadow: 1px 1px 0px #000;
+        content: "Grand Transitions";
+        white-space: nowrap;
+        position: absolute;
+        left: 0px;
+        top: -10px;
+        display: block;
+        text-indent:-50px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  
+  a.link__arrow {
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    position:fixed;
+    left: 20%;
+    &:hover{
+      transition:transform .2s ease;
+      transform:scale(1.05);
+    }
+     &:active{
+      margin-top:3px;
+       margin-right:3px;
+       margin-left:auto;
+    }
+  
+    &:after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-left: solid 10px #eee;
+      border-bottom: solid 10px #ccc;
+      transform: rotate(44deg);
+    }
+    input[type="radio"] {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: none;
+      top: 0px;
+      left: 0px;
+      z-index: 999999;
+      background: transparent;
+      transform: scale(2);
+      appearance: none;
+      cursor: pointer;
+    }
+    input[type="radio"].inp-rad.inp-next.rad-2,
+    input[type="radio"].inp-rad.inp-prev.rad-8 {
+      display: block;
+    }
+  }
+  
+  a.link__arrow.arrow-next {
+    left: auto;
+    right: 20%;
+     &:active{
+      margin-top:3px;
+       margin-left:3px;
+         margin-right:auto;
+    }
+    &:after {
+      transform: rotate(-133deg);
+    }
+  }
+  
+  ul {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    z-index: 0;
+    transform: rotateY( calc(var(--deg) * 1));
+    transition: transform 0.4s ease-in;
+   
+  
+    > li {
+      display: block;
+      list-style: none;
+      z-index: 0;
+      width: 200px;
+      height: 150px;
+      top: 100px;
+      position: absolute;
+     
+      background-color: #111;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform-origin: center;
+      transform-style: preserve-3d;
+     -webkit-box-reflect: below 2px linear-gradient(transparent, rgb(255,255,255,.15));
+      &:after,
+      &:before{
+        content:"";
+        display:block;
+        width:100%;
+        top:-10px;
+        height:3px;
+        left:0px;
+        position:absolute;
+         background:#990000;
+      }
+      &:after{
+        top:auto;
+        height:1px;
+        bottom:-10px;
+        background:#777;
+      }
+      &:nth-child(odd){
+        &:before{
+          background:orangeRed;
+        }
+      }
+    }
+    > li {
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(250px);
+    }
+  
+    > li:nth-child(1) {
+      background-image: var(--img1);
+    }
+    > li:nth-child(2) {
+      background-image: var(--img2);
+    }
+    > li:nth-child(3) {
+      background-image: var(--img3);
+    }
+    > li:nth-child(4) {
+      background-image: var(--img4);
+    }
+    > li:nth-child(5) {
+      background-image: var(--img5);
+    }
+    > li:nth-child(6) {
+      background-image: var(--img6);
+    }
+    > li:nth-child(7) {
+      background-image: var(--img7);
+    }
+    > li:nth-child(8) {
+      background-image: var(--img8);
+    }
+  }
+  
+  
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-1:checked) {
+    ul {
+      transform: rotateY(-45deg);
+      animation-name: rotateNextEnd;
+      animation-duration: 0.6s;
+      animation-iteration-count: 1;
+      animation-delay: 0.1s;
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+      
+      > input.inp-prev.rad-8,
+      > input.inp-next.rad-2 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-2:checked) {
+    h1::after {
+      content: "How the World Really Works";
+    }
+    ul {
+      transform: rotateY(calc(var(--deg) * 2))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+     
+      > input.inp-prev.rad-7,
+      > input.inp-next.rad-3 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-3:checked) {
+    h1::after {
+      content: " The Better Angels of Our Nature";
+    }
+    ul {
+      transform: rotateY(calc(var(--deg) * 3))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+    
+      > input.inp-prev.rad-6,
+      > input.inp-next.rad-4 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-4:checked) {
+    h1::after {
+      content: "The Coddling of the American Mind";
+    }
+  
+    ul {
+      transform:rotateY(calc(var(--deg) * 4));
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+      
+      > input.inp-prev.rad-5,
+      > input.inp-next.rad-5 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-5:checked) {
+    h1::after {
+      content: "Why We're Polarized";
+    }
+    ul {
+       transform:rotateY(calc(var(--deg) * 5))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+     
+      > input.inp-prev.rad-4,
+      > input.inp-next.rad-6 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-6:checked) {
+    h1::after {
+      content: " A Gentleman in Moscow ";
+    }
+  
+    ul {
+      transform:rotateY(calc(var(--deg) * 6));
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+      
+      > input.inp-prev.rad-3,
+      > input.inp-next.rad-7 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-7:checked) {
+    h1::after {
+      content: "The Heart";
+    }
+    ul {
+     transform:rotateY(calc(var(--deg) * 7));
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+    
+      > input.inp-prev.rad-2,
+      > input.inp-next.rad-8 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-next.rad-8:checked) {
+    h1::after {
+      content: "All the Light We Cannot See";
+    }
+    ul {
+     transform:rotateY(calc(var(--deg) * 8))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+   
+      > input.inp-prev.rad-1,
+      > input.inp-next.rad-1 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* =================================== */
+  /* =================================== */
+  /* =================================== */
+  
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-1:checked) {
+    h1::after {
+      content: "Capt. Christopher Pike";
+    }
+    ul {
+     transform:rotateY(calc(var(--deg) * -1))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+     
+      > input.inp-prev.rad-2,
+      > input.inp-next.rad-8 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-2:checked) {
+    h1::after {
+      content: "Capt. Jean-Luc Picard";
+    }
+    ul {
+      transform:rotateY(calc(var(--deg) * -2))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+  
+   
+      > input.inp-prev.rad-3,
+      > input.inp-next.rad-7 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-3:checked) {
+    h1::after {
+      content: "Capt. Philippa Georgiou";
+    }
+    ul {
+       transform:rotateY(calc(var(--deg) * -3))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+  
+      > input.inp-prev.rad-4,
+      > input.inp-next.rad-6 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-4:checked) {
+    h1::after {
+      content: "Capt. James Kirk";
+    }
+    ul {
+     transform:rotateY(calc(var(--deg) * -4))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+     
+      > input.inp-prev.rad-5,
+      > input.inp-next.rad-5 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-5:checked) {
+    h1::after {
+      content: "Capt. Jonathan Archer";
+    }
+    ul {
+      transform:rotateY(calc(var(--deg) * -5))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+      
+      > input.inp-prev.rad-6,
+      > input.inp-next.rad-4 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-6:checked) {
+    h1::after {
+      content: "Capt. Kathryn Janeway";
+    }
+    ul {
+       transform:rotateY(calc(var(--deg) * -6))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+    
+      > input.inp-prev.rad-7,
+      > input.inp-next.rad-7 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-7:checked) {
+    h1::after {
+      content: "Capt. Gabriel Lorca";
+    }
+    ul {
+     transform:rotateY(calc(var(--deg) * -7))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+   
+      > input.inp-prev.rad-8,
+      > input.inp-next.rad-2 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  /* ======= START ==================== */
+  body:has(input[type="radio"].inp-prev.rad-8:checked) {
+    h1::after {
+      content: "Capt. Benjamin Sisko";
+    }
+    ul {
+      transform:rotateY(calc(var(--deg) * -8))
+    }
+    a.link__arrow {
+      input[type="radio"] {
+        display: none;
+      }
+  
+      
+      > input.inp-prev.rad-1,
+      > input.inp-next.rad-1 {
+        display: block;
+      }
+    }
+  }
+  /* ======= END ====================== */
+  
+  .intro{
+    background-color: black;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .recommendation-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    width: 100%;
+    max-width: 80%;
+    margin: 50px;
+    margin-left: 120px;
+}
+
+.recommendation-form h2 {
+    margin-bottom: 20px;
+}
+
+.recommendation-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.recommendation-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.recommendation-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.recommendation-form button:hover {
+    background-color: #0056b3;
+}
+
+#recommendation-result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+.footer {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.footer-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.footer-social .social-text {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.footer-social .social-icons .social-icon {
+  font-size: 24px;
+  color: #666;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-social .social-icons .social-icon:hover {
+  color: #333;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: #666;
+}
